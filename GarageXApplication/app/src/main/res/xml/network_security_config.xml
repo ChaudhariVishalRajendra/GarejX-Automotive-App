@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Why this file is needed:
+  Android 9.0 (API 28) and higher block plain HTTP (unencrypted) network calls by default.
+  Since our Node.js backend runs locally on http://10.0.2.2:5000 (emulator) or http://192.168.x.x:5000 (local Wi-Fi),
+  we explicitly tell Android to allow cleartext HTTP traffic for these specific developer addresses.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Android Emulator default mapping to host PC localhost -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <!-- Standard localhost -->
+        <domain includeSubdomains="true">localhost</domain>
+        <!-- Home / College / Office Wi-Fi local subnet ranges -->
+        <domain includeSubdomains="true">192.168.0.0/16</domain>
+        <domain includeSubdomains="true">10.0.0.0/8</domain>
+    </domain-config>
+</network-security-config>

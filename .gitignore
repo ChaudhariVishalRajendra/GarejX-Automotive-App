@@ -1,0 +1,30 @@
+# Node.js dependencies
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+
+# Environment and sensitive keys
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Android & Gradle
+**/.gradle/
+**/build/
+**/captures/
+**/local.properties
+**/.cxx/
+*.apk
+!app-debug.apk
+*.aab
+
+# IDEs & Editors
+**/.idea/
+**/.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+Thumbs.db

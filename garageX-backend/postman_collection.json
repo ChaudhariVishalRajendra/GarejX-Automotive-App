@@ -1,0 +1,25 @@
+{
+  "info": {
+    "name": "GarejX Local API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" },
+    { "key": "vehicleId", "value": "" },
+    { "key": "serviceId", "value": "" },
+    { "key": "appointmentId", "value": "" },
+    { "key": "mechanicId", "value": "" },
+    { "key": "billId", "value": "" }
+  ],
+  "item": [
+    { "name": "Health", "request": { "method": "GET", "url": "{{baseUrl}}/api/health" } },
+    { "name": "Register", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@garejx.com\",\n  \"phone\": \"9876543210\",\n  \"password\": \"Test@123\"\n}" }, "url": "{{baseUrl}}/api/auth/register" } },
+    { "name": "Login", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@garejx.com\",\n  \"password\": \"Test@123\"\n}" }, "url": "{{baseUrl}}/api/auth/login" } },
+    { "name": "My Profile", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/auth/me" } },
+    { "name": "Create Vehicle", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"vehicleNumber\": \"GJ05AB1234\",\n  \"brand\": \"Toyota\",\n  \"model\": \"Innova\",\n  \"fuelType\": \"DIESEL\",\n  \"manufacturingYear\": 2024,\n  \"kilometers\": 15000\n}" }, "url": "{{baseUrl}}/api/vehicles" } },
+    { "name": "List Vehicles", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/vehicles" } },
+    { "name": "List Services", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/services" } },
+    { "name": "List Appointments", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/appointments" } }
+  ]
+}
