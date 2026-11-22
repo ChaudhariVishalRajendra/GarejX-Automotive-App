@@ -5,11 +5,6 @@
 **/yarn-error.log*
 **/.pnpm-debug.log*
 
-# Environment and sensitive keys
-**/.env
-**/.env.local
-**/.env.*.local
-
 # Android & Gradle
 **/.gradle/
 **/build/
