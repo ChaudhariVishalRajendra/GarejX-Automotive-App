@@ -27,7 +27,9 @@ class TokenManager(private val context: Context) {
         val KEY_SERVER_URL = stringPreferencesKey("custom_server_url")
 
         // Default base URL for Android Emulator pointing to host PC Express backend
-        const val DEFAULT_BASE_URL = "http://10.0.2.2:5000/api/"
+        // const val DEFAULT_BASE_URL = "http://10.0.2.2:5000/api/"
+        const val DEFAULT_BASE_URL = "https://garejx-automotive-app.onrender.com"
+
     }
 
     /**
