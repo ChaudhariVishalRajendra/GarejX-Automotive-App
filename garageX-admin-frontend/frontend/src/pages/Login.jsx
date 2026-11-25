@@ -9,11 +9,6 @@ export default function Login({ onLogin }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const fillDemoAdmin = () => {
-    setEmail("admin@garejx.com");
-    setPassword("password@100");
-  };
-
   async function submit(e) {
     e.preventDefault();
     setLoading(true);
@@ -71,16 +66,6 @@ export default function Login({ onLogin }) {
         <span className="eyebrow">WELCOME BACK</span>
         <h2>Admin sign in</h2>
         <p className="muted">Use your GarejX ADMIN account to continue.</p>
-
-        <div style={{ background: "#F6EFE9", padding: "10px 14px", borderRadius: "8px", marginBottom: "16px", fontSize: "12px", border: "1px solid #E5D6C8", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div>
-            <strong style={{ color: "#6B1D2F", display: "block" }}>Demo Admin Credentials:</strong>
-            <span style={{ color: "#555" }}>admin@garejx.com / password@100</span>
-          </div>
-          <button type="button" onClick={fillDemoAdmin} style={{ background: "#6B1D2F", color: "#fff", border: "none", padding: "4px 8px", borderRadius: "4px", cursor: "pointer", fontSize: "11px" }}>
-            Auto Fill
-          </button>
-        </div>
 
         <form onSubmit={submit}>
           <label className="field">
