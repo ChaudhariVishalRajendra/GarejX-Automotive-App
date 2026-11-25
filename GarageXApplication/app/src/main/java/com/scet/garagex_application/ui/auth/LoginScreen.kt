@@ -146,29 +146,34 @@ fun LoginScreen(
                             onValueChange = { viewModel.onEmailChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text("Email Address") },
-                            placeholder = { Text("customer@garejx.com") },
+                            placeholder = { Text("customer@garejx.com", color = TextSecondary.copy(alpha = 0.5f)) },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Email,
                                     contentDescription = "Email Icon",
-                                    tint = MutedSageSecondary
+                                    tint = DeepBurgundyPrimary
                                 )
                             },
                             singleLine = true,
                             shape = RoundedCornerShape(12.dp),
                             keyboardOptions = KeyboardOptions(
                                 keyboardType = KeyboardType.Email,
-                                imeAction = ImeAction.Next
+                                imeAction = ImeAction.Next,
+                                autoCorrect = false
                             ),
                             keyboardActions = KeyboardActions(
                                 onNext = { focusManager.moveFocus(FocusDirection.Down) }
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
                                 focusedBorderColor = DeepBurgundyPrimary,
                                 focusedLabelColor = DeepBurgundyPrimary,
                                 unfocusedBorderColor = WarmCreamOutline,
-                                focusedContainerColor = WarmCreamSurface,
-                                unfocusedContainerColor = WarmCreamSurface
+                                unfocusedLabelColor = TextSecondary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
                             )
                         )
 
@@ -184,7 +189,7 @@ fun LoginScreen(
                                 Icon(
                                     imageVector = Icons.Default.Lock,
                                     contentDescription = "Lock Icon",
-                                    tint = MutedSageSecondary
+                                    tint = DeepBurgundyPrimary
                                 )
                             },
                             trailingIcon = {
@@ -196,7 +201,7 @@ fun LoginScreen(
                                             Icons.Default.Visibility
                                         },
                                         contentDescription = "Toggle Password Visibility",
-                                        tint = MutedSageSecondary
+                                        tint = DeepBurgundyPrimary
                                     )
                                 }
                             },
@@ -209,7 +214,8 @@ fun LoginScreen(
                             },
                             keyboardOptions = KeyboardOptions(
                                 keyboardType = KeyboardType.Password,
-                                imeAction = ImeAction.Done
+                                imeAction = ImeAction.Done,
+                                autoCorrect = false
                             ),
                             keyboardActions = KeyboardActions(
                                 onDone = {
@@ -218,11 +224,15 @@ fun LoginScreen(
                                 }
                             ),
                             colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
                                 focusedBorderColor = DeepBurgundyPrimary,
                                 focusedLabelColor = DeepBurgundyPrimary,
                                 unfocusedBorderColor = WarmCreamOutline,
-                                focusedContainerColor = WarmCreamSurface,
-                                unfocusedContainerColor = WarmCreamSurface
+                                unfocusedLabelColor = TextSecondary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
                             )
                         )
 

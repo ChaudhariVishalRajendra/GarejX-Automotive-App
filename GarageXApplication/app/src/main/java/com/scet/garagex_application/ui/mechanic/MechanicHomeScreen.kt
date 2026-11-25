@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.foundation.background
+import com.scet.garagex_application.ui.theme.TextPrimary
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -484,7 +485,14 @@ fun CompleteJobDialog(
                     placeholder = { Text("e.g. Changed oil, replaced front brake pads") },
                     modifier = Modifier.fillMaxWidth(),
                     minLines = 2,
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundy,
+                        cursorColor = DeepBurgundy
+                    )
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -494,7 +502,14 @@ fun CompleteJobDialog(
                     onValueChange = { costText = it.filter { char -> char.isDigit() || char == '.' } },
                     label = { Text("Final Labor & Parts Cost (₹)") },
                     modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundy,
+                        cursorColor = DeepBurgundy
+                    )
                 )
             }
         },
@@ -542,12 +557,21 @@ fun InBayBillDialog(
                 )
                 Spacer(modifier = Modifier.height(12.dp))
 
+                val fieldColors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    focusedBorderColor = DeepBurgundy,
+                    cursorColor = DeepBurgundy
+                )
+
                 OutlinedTextField(
                     value = itemName,
                     onValueChange = { itemName = it },
                     label = { Text("Primary Spare Part") },
                     modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                    colors = fieldColors
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -558,14 +582,14 @@ fun InBayBillDialog(
                         onValueChange = { itemQty = it.filter { c -> c.isDigit() } },
                         label = { Text("Qty") },
                         modifier = Modifier.weight(1f),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                        colors = fieldColors
                     )
                     OutlinedTextField(
                         value = itemPrice,
                         onValueChange = { itemPrice = it.filter { c -> c.isDigit() || c == '.' } },
                         label = { Text("Part Price (₹)") },
                         modifier = Modifier.weight(1.5f),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                        colors = fieldColors
                     )
                 }
 
@@ -576,7 +600,7 @@ fun InBayBillDialog(
                     onValueChange = { laborPrice = it.filter { c -> c.isDigit() || c == '.' } },
                     label = { Text("Labor Charges (₹)") },
                     modifier = Modifier.fillMaxWidth(),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                    colors = fieldColors
                 )
             }
         },

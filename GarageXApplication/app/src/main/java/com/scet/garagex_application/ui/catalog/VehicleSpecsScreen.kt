@@ -200,8 +200,13 @@ fun VehicleSpecsScreen(
                 placeholder = { Text("e.g. MH12AB1234", color = TextSecondary) },
                 shape = RoundedCornerShape(12.dp),
                 colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
                     focusedBorderColor = DeepBurgundyPrimary,
-                    unfocusedBorderColor = WarmCreamOutline
+                    unfocusedBorderColor = WarmCreamOutline,
+                    cursorColor = DeepBurgundyPrimary
                 ),
                 singleLine = true
             )

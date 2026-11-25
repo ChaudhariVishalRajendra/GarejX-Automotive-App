@@ -171,7 +171,16 @@ fun SosRoadsideScreen(
                 onValueChange = { userPhone = it },
                 label = { Text("Emergency Contact Number") },
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp)
+                shape = RoundedCornerShape(12.dp),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    focusedBorderColor = DeepBurgundyPrimary,
+                    unfocusedBorderColor = WarmCreamOutline,
+                    cursorColor = DeepBurgundyPrimary
+                )
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -183,7 +192,16 @@ fun SosRoadsideScreen(
                 label = { Text("Landmark / Car Problem Details (Optional)") },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
-                maxLines = 2
+                maxLines = 2,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    focusedBorderColor = DeepBurgundyPrimary,
+                    unfocusedBorderColor = WarmCreamOutline,
+                    cursorColor = DeepBurgundyPrimary
+                )
             )
 
             Spacer(modifier = Modifier.height(24.dp))

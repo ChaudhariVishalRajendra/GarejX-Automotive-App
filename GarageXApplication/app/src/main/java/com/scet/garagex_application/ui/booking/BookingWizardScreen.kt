@@ -2,6 +2,8 @@ package com.scet.garagex_application.ui.booking
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import com.scet.garagex_application.ui.theme.TextPrimary
+import com.scet.garagex_application.ui.theme.DeepBurgundy
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -728,6 +730,10 @@ fun Step4ConfirmBooking(
                 maxLines = 5,
                 shape = RoundedCornerShape(12.dp),
                 colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
                     focusedBorderColor = DeepBurgundy,
                     focusedLabelColor = DeepBurgundy,
                     cursorColor = DeepBurgundy

@@ -1,6 +1,7 @@
 package com.scet.garagex_application.ui.services
 
 import androidx.compose.foundation.background
+import com.scet.garagex_application.ui.theme.TextPrimary
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -116,6 +117,10 @@ fun ServicesScreen(
                 },
                 shape = RoundedCornerShape(12.dp),
                 colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
+                    focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                    unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
                     focusedBorderColor = DeepBurgundy,
                     focusedLabelColor = DeepBurgundy,
                     cursorColor = DeepBurgundy

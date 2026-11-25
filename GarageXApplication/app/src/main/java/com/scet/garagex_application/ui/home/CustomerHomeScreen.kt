@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.foundation.background
+import com.scet.garagex_application.ui.theme.TextPrimary
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -456,9 +457,16 @@ fun CustomerHomeScreen(
                         value = tempServerUrl,
                         onValueChange = { tempServerUrl = it },
                         label = { Text("Backend URL") },
-                        placeholder = { Text("http://192.168.1.5:5000/api/") },
+                        placeholder = { Text("https://garejx-automotive-app.onrender.com/api/") },
                         modifier = Modifier.fillMaxWidth(),
-                        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = DeepBurgundy)
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = TextPrimary,
+                            unfocusedTextColor = TextPrimary,
+                            focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            focusedBorderColor = DeepBurgundy,
+                            cursorColor = DeepBurgundy
+                        )
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(

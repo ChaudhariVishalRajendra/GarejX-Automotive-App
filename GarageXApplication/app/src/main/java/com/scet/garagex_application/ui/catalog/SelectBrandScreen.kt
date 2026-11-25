@@ -142,10 +142,13 @@ fun SelectBrandScreen(
                 },
                 shape = RoundedCornerShape(12.dp),
                 colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = TextPrimary,
+                    unfocusedTextColor = TextPrimary,
                     focusedBorderColor = DeepBurgundyPrimary,
                     unfocusedBorderColor = WarmCreamOutline,
                     focusedContainerColor = Color.White,
-                    unfocusedContainerColor = Color.White
+                    unfocusedContainerColor = Color.White,
+                    cursorColor = DeepBurgundyPrimary
                 ),
                 singleLine = true
             )

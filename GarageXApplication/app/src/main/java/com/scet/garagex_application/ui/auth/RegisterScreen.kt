@@ -176,9 +176,18 @@ fun RegisterScreen(
                             onValueChange = { viewModel.onNameChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text("Full Name") },
-                            leadingIcon = { Icon(Icons.Default.Person, "Name", tint = MutedSageSecondary) },
+                            leadingIcon = { Icon(Icons.Default.Person, "Name", tint = DeepBurgundyPrimary) },
                             singleLine = true,
-                            shape = RoundedCornerShape(12.dp)
+                            shape = RoundedCornerShape(12.dp),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
+                                focusedBorderColor = DeepBurgundyPrimary,
+                                focusedLabelColor = DeepBurgundyPrimary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -188,10 +197,19 @@ fun RegisterScreen(
                             onValueChange = { viewModel.onEmailChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text("Email Address") },
-                            leadingIcon = { Icon(Icons.Default.Email, "Email", tint = MutedSageSecondary) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                            leadingIcon = { Icon(Icons.Default.Email, "Email", tint = DeepBurgundyPrimary) },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email, autoCorrect = false),
                             singleLine = true,
-                            shape = RoundedCornerShape(12.dp)
+                            shape = RoundedCornerShape(12.dp),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
+                                focusedBorderColor = DeepBurgundyPrimary,
+                                focusedLabelColor = DeepBurgundyPrimary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -201,10 +219,19 @@ fun RegisterScreen(
                             onValueChange = { viewModel.onPhoneChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text("Phone Number") },
-                            leadingIcon = { Icon(Icons.Default.Phone, "Phone", tint = MutedSageSecondary) },
+                            leadingIcon = { Icon(Icons.Default.Phone, "Phone", tint = DeepBurgundyPrimary) },
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                             singleLine = true,
-                            shape = RoundedCornerShape(12.dp)
+                            shape = RoundedCornerShape(12.dp),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
+                                focusedBorderColor = DeepBurgundyPrimary,
+                                focusedLabelColor = DeepBurgundyPrimary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -214,11 +241,20 @@ fun RegisterScreen(
                             onValueChange = { viewModel.onPasswordChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text("Password (min 6 chars)") },
-                            leadingIcon = { Icon(Icons.Default.Lock, "Password", tint = MutedSageSecondary) },
+                            leadingIcon = { Icon(Icons.Default.Lock, "Password", tint = DeepBurgundyPrimary) },
                             visualTransformation = PasswordVisualTransformation(),
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, autoCorrect = false),
                             singleLine = true,
-                            shape = RoundedCornerShape(12.dp)
+                            shape = RoundedCornerShape(12.dp),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedTextColor = TextPrimary,
+                                unfocusedTextColor = TextPrimary,
+                                focusedBorderColor = DeepBurgundyPrimary,
+                                focusedLabelColor = DeepBurgundyPrimary,
+                                focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                                cursorColor = DeepBurgundyPrimary
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(20.dp))

@@ -71,7 +71,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
      */
     fun performLogin(onSuccess: (role: String) -> Unit) {
         val email = _uiState.value.email.trim()
-        val password = _uiState.value.password
+        val password = _uiState.value.password.trim()
 
         // 1. Fresher-friendly input validation
         if (email.isEmpty()) {
@@ -140,10 +140,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                     )
                 }
             } catch (e: Exception) {
-                // Network error (e.g. server offline or wrong IP address)
+                // Network error (e.g. server offline, SSL issue, or wrong IP address)
+                val detail = e.localizedMessage ?: e.message ?: "Unable to reach server"
                 _uiState.value = _uiState.value.copy(
                     isLoading = false,
-                    errorMessage = "Network error: Unable to reach GarejX server. Please check your Wi-Fi or server IP."
+                    errorMessage = "Network error: $detail"
                 )
             }
         }

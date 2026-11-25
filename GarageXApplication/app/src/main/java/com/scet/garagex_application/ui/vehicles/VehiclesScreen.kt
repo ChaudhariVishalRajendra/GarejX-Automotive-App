@@ -416,8 +416,17 @@ fun AddVehicleDialog(
                     value = uiState.newPlate,
                     onValueChange = { viewModel.onPlateChange(it) },
                     label = { Text("Registration Plate") },
-                    placeholder = { Text("MH12AB1234") },
+                    placeholder = { Text("MH12AB1234", color = TextSecondary) },
                     singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundyPrimary,
+                        unfocusedBorderColor = WarmCreamOutline,
+                        cursorColor = DeepBurgundyPrimary
+                    ),
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -427,8 +436,17 @@ fun AddVehicleDialog(
                     value = uiState.newBrand,
                     onValueChange = { viewModel.onBrandChange(it) },
                     label = { Text("Brand / Make") },
-                    placeholder = { Text("e.g. Hyundai, Tata, Honda") },
+                    placeholder = { Text("e.g. Maruti Suzuki, Hyundai, Tata", color = TextSecondary) },
                     singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundyPrimary,
+                        unfocusedBorderColor = WarmCreamOutline,
+                        cursorColor = DeepBurgundyPrimary
+                    ),
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -438,8 +456,17 @@ fun AddVehicleDialog(
                     value = uiState.newModel,
                     onValueChange = { viewModel.onModelChange(it) },
                     label = { Text("Model") },
-                    placeholder = { Text("e.g. i20, Nexon, City") },
+                    placeholder = { Text("e.g. Swift, Nexon, Creta", color = TextSecondary) },
                     singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundyPrimary,
+                        unfocusedBorderColor = WarmCreamOutline,
+                        cursorColor = DeepBurgundyPrimary
+                    ),
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -490,6 +517,15 @@ fun AddVehicleDialog(
                         label = { Text("Year") },
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         singleLine = true,
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = TextPrimary,
+                            unfocusedTextColor = TextPrimary,
+                            focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            focusedBorderColor = DeepBurgundyPrimary,
+                            unfocusedBorderColor = WarmCreamOutline,
+                            cursorColor = DeepBurgundyPrimary
+                        ),
                         modifier = Modifier.weight(1f)
                     )
 
@@ -499,6 +535,15 @@ fun AddVehicleDialog(
                         label = { Text("Odometer (km)") },
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         singleLine = true,
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = TextPrimary,
+                            unfocusedTextColor = TextPrimary,
+                            focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                            focusedBorderColor = DeepBurgundyPrimary,
+                            unfocusedBorderColor = WarmCreamOutline,
+                            cursorColor = DeepBurgundyPrimary
+                        ),
                         modifier = Modifier.weight(1f)
                     )
                 }

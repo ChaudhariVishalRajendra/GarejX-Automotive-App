@@ -1014,29 +1014,42 @@ fun PartnerOnboardingDialog(
                 )
             } else {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    val fieldColors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextPrimary,
+                        focusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        unfocusedContainerColor = androidx.compose.ui.graphics.Color.White,
+                        focusedBorderColor = DeepBurgundyPrimary,
+                        unfocusedBorderColor = WarmCreamOutline,
+                        cursorColor = DeepBurgundyPrimary
+                    )
                     OutlinedTextField(
                         value = fullName,
                         onValueChange = { fullName = it },
                         label = { Text("Owner / Mechanic Name") },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = fieldColors
                     )
                     OutlinedTextField(
                         value = phone,
                         onValueChange = { phone = it },
                         label = { Text("Contact Phone") },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = fieldColors
                     )
                     OutlinedTextField(
                         value = workshopName,
                         onValueChange = { workshopName = it },
                         label = { Text("Garage / Workshop Name") },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = fieldColors
                     )
                     OutlinedTextField(
                         value = city,
                         onValueChange = { city = it },
                         label = { Text("City / Area") },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = fieldColors
                     )
                 }
             }

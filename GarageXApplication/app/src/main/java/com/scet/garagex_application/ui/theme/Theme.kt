@@ -36,28 +36,34 @@ private val LightColorScheme = lightColorScheme(
 )
 
 // =========================================================================
-// Dark Theme: Rich muted night tones
+// Dark Theme: Ensures high-contrast charcoal text even if device is in Dark Mode
 // =========================================================================
-private val DarkColorScheme = darkColorScheme(
-    primary = DarkBurgundyPrimary,
-    onPrimary = DarkBurgundyOnPrimary,
-    secondary = DarkSageSecondary,
-    background = DarkCreamBackground,
-    onBackground = WarmCreamSurface,
-    surface = DarkCreamSurface,
-    onSurface = WarmCreamSurface
+private val DarkColorScheme = lightColorScheme(
+    primary = DeepBurgundyPrimary,
+    onPrimary = DeepBurgundyOnPrimary,
+    secondary = MutedSageSecondary,
+    onSecondary = MutedSageOnSecondary,
+    background = WarmCreamBackground,
+    onBackground = TextPrimary,
+    surface = WarmCreamSurface,
+    onSurface = TextPrimary,
+    surfaceVariant = WarmCreamSurfaceVariant,
+    onSurfaceVariant = TextSecondary,
+    outline = WarmCreamOutline,
+    error = StatusErrorRed
 )
 
 /**
  * GarejXTheme wraps all our Composables and applies the Atelier Automotive
- * design system (colors, typography, and status bar behavior).
+ * design system (Deep Burgundy, Warm Cream, Charcoal Black Text).
+ * Fixed to high-contrast palette so text is never washed out in device dark mode.
  */
 @Composable
 fun GarejXTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
+    val colorScheme = LightColorScheme
 
     // Synchronize system status bar color with our background
     val view = LocalView.current
@@ -65,7 +71,7 @@ fun GarejXTheme(
         SideEffect {
             val window = (view.context as? Activity)?.window
             if (window != null) {
-                WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
+                WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = true
             }
         }
     }
